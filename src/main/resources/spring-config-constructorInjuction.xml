@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--  constructor Injuction  -->
+    <bean class="com.SpringCore.constructorInjuction.Person" id="person">
+        <constructor-arg value="rama krishna reddy"/>
+        <constructor-arg value="20" type="int"/>
+    </bean>
+    <!--    <bean class="com.SpringCore.constructorInjuction.Person" id="person">-->
+    <!--        <constructor-arg>-->
+    <!--            <value>Rama krishna reddy</value>-->
+    <!--            <value>20</value>-->
+    <!--        </constructor-arg>-->
+    <!--    </bean> this wont work because <value> tag mut be used only once-->
+    <bean class="com.SpringCore.constructorInjuction.Person" id="person1">
+        <constructor-arg value="lakshman"/>
+        <constructor-arg value="20" type="int"/>
+    </bean>
+    <bean class="com.SpringCore.constructorInjuction.Certificate" id="certificate">
+        <constructor-arg value="1"/>
+        <constructor-arg value="O"/>
+        <constructor-arg ref="person"/>
+    </bean>
+    <bean class="com.SpringCore.constructorInjuction.Certificate" id="certificate1" c:id="2" c:grade="a" c:person-ref="person1"/>
+    <bean class="com.SpringCore.constructorInjuction.Student" name="student" >
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="saran"/>
+        <constructor-arg name="mailId" value="saran@outlook.com"/>
+        <constructor-arg name="courses">
+            <list>
+                <value>Java</value>
+                <value>Python</value>
+                <value>Spring Framework</value>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

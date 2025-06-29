@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:annotation-config/><!-- this is used for enabling all annotations   -->
+    <!--  setter Injuction  -->
+    <!--  method 1  -->
+    <bean id="student" class="com.SpringCore.setterInjuction.Student">
+        <property name="id">
+            <value>1</value>
+        </property>
+        <property name="name">
+            <value>Ramakrishnareddy</value>
+        </property>
+        <property name="mailId">
+            <value>ramakrishanreddy.d9@gmail.com</value>
+        </property>
+    </bean>
+    <!--  method 2  -->
+    <bean id = "student1" class = "com.SpringCore.setterInjuction.Student">
+        <property name="id" value="2"/>
+        <property name="name" value="Vishnu"/>
+        <property name="mailId" value="vishnu@gmail.com"/>
+    </bean>
+    <!--  method 3  -->
+    <bean id = "student2" class = "com.SpringCore.setterInjuction.Student" p:id="123" p:name="lakshman" p:mailId="lakshman@gmail.com"/>
+    <!--  Scope  --><!--  by defualt single ton now we are using prototype object is created when we write getbeean method   -->
+    <bean id="student3" class="com.SpringCore.setterInjuction.Student" p:id="124" p:name="Bharath" p:mailId="Bharath@gmail.com" scope="prototype"/><!--  by default singleton  -->
+    <!--  List, Map, Set (or) collection Type -->
+    <bean id = "employee" class="com.SpringCore.setterInjuction.Employee">
+        <property name="name">
+            <value>Rama Krisahna Reddy</value>
+        </property>
+        <property name="skills">
+            <list>
+                <value>Java</value>
+                <value>Python</value>
+                <value>Spring Framework</value>
+            </list>
+        </property>
+        <property name="courses">
+            <map>
+                <entry key="java" value="1 month"/>
+                <entry key="Python" value="1 month"/>
+            </map>
+        </property>
+        <property name="languages">
+            <set>
+                <value>English</value>
+                <value>Hindi</value>
+                <value>Telugu</value>
+            </set>
+        </property>
+    </bean>
+    <!--   Reference Type     -->
+    <bean id="engine" class="com.SpringCore.setterInjuction.Engine" p:fuel="petrol"/>
+
+    <bean id="car" class="com.SpringCore.setterInjuction.Car">
+        <property name="eng" ref="engine"/>
+    </bean>
+    <bean class="com.SpringCore.setterInjuction.Car" name="car1" p:eng-ref="engine"/>
+</beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:annotation-config/>
+
+    <!-- byName setup -->
+    <bean id="address" class="com.SpringCore.AutoWiringUsingXml.Address"
+          p:city="vijayawada" p:state="AP" p:country="India"/>
+    <bean id="employee" class="com.SpringCore.AutoWiringUsingXml.Employee"
+          p:name="ramakrishnareddy" autowire="byName"/>
+
+    <!-- byType setup -->
+    <bean id="someAdd" class="com.SpringCore.AutoWiringUsingXml.Add"
+          p:city="guntur" p:state="AP" p:country="India"/>
+    <bean id="employee1" class="com.SpringCore.AutoWiringUsingXml.Emp"
+          p:name="Vishnu" autowire="byType"/>
+</beans>
