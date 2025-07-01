@@ -14,7 +14,6 @@
            http://www.springframework.org/schema/util/spring-util.xsd">
 
     <context:annotation-config/><!-- this is used for enabling all annotations   -->
-    <bean>
+    <context:component-scan base-package="com.SpringCore.withOutXmlConfig"/>
 
-    </bean>
 </beans>

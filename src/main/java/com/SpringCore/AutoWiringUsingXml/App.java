@@ -11,5 +11,8 @@ public class App {
 
         Emp employee1 = applicationContext.getBean("employee1", Emp.class);
         System.out.println(employee1);
+
+        Person person = applicationContext.getBean("person", Person.class);
+        System.out.println(person);
     }
 }

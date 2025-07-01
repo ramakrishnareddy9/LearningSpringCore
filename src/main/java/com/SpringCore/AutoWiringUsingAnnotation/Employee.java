@@ -1,7 +1,16 @@
-package com.SpringCore.AutoWiringUsingXml;
+package com.SpringCore.AutoWiringUsingAnnotation;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import com.SpringCore.AutoWiringUsingAnnotation.Address;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+// @Autowired annotation is above property or constructor for construcor injection on setter method for property injection
+// @Qualifier annotation is used to specify the bean name if there are multiple beans of same type
 
 public class Employee {
     private String name;
+    @Autowired
+    @Qualifier("address1")
     private Address address;
 
     public Employee(String name, Address address) {

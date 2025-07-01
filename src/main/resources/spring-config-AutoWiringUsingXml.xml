@@ -26,4 +26,14 @@
           p:city="guntur" p:state="AP" p:country="India"/>
     <bean id="employee1" class="com.SpringCore.AutoWiringUsingXml.Emp"
           p:name="Vishnu" autowire="byType"/>
+
+    <util:list list-class="java.util.LinkedList" id="course">
+        <value>Java</value>
+        <value>python</value>
+        <value>Spring Framework</value>
+    </util:list>
+
+    <bean class="com.SpringCore.AutoWiringUsingXml.Person" name="person">
+        <property name="courses" ref="course"/>
+    </bean>
 </beans>
