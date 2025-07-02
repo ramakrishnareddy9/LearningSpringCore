@@ -23,9 +23,13 @@
 
     <!-- byType setup -->
     <bean id="someAdd" class="com.SpringCore.AutoWiringUsingXml.Add"
-          p:city="guntur" p:state="AP" p:country="India"/>
+          p:city="guntur" p:state="AP" p:country="India" primary="true"/>
+
+    <bean id="someAdd1" class="com.SpringCore.AutoWiringUsingXml.Add"
+          p:city="Vijayawada" p:state="AP" p:country="India"/>
+
     <bean id="employee1" class="com.SpringCore.AutoWiringUsingXml.Emp"
-          p:name="Vishnu" autowire="byType"/>
+          p:name="Vishnu" autowire="byType" lazy-init="true"/>
 
     <util:list list-class="java.util.LinkedList" id="course">
         <value>Java</value>
@@ -35,5 +39,12 @@
 
     <bean class="com.SpringCore.AutoWiringUsingXml.Person" name="person">
         <property name="courses" ref="course"/>
+    </bean>
+
+    <!--  inner bean  -->
+    <bean class="com.SpringCore.AutoWiringUsingXml.Laptop" name="laptop">
+        <property name="computer">
+            <bean class="com.SpringCore.AutoWiringUsingXml.Desktop" name="desktop"/>
+        </property>
     </bean>
 </beans>

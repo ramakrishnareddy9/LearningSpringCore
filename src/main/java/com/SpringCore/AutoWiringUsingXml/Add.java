@@ -1,6 +1,9 @@
 package com.SpringCore.AutoWiringUsingXml;
 
 public class Add {
+    public Add(){
+        System.out.println("Add is running");
+    }
     private String city;
     private String state;
     private String country;

@@ -1,6 +1,11 @@
 package com.SpringCore.AutoWiringUsingXml;
 
 public class Emp {
+
+    public Emp() {
+        System.out.println("Emp constructor is called");
+    }
+
     private String name;
     private Add add;
 

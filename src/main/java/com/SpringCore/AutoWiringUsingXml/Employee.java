@@ -1,14 +1,17 @@
 package com.SpringCore.AutoWiringUsingXml;
 
 public class Employee {
+
+    public Employee(){
+        System.out.println("Employee constructor is called");
+    }
+
     private String name;
     private Address address;
 
     public Employee(String name, Address address) {
         this.name = name;
         this.address = address;
-    }
-    public Employee() {
     }
 
     public String getName() {

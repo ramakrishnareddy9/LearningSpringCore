@@ -1,6 +1,11 @@
 package com.SpringCore.AutoWiringUsingXml;
 
 public class Address {
+
+    public Address(){
+        System.out.println("Address is running");
+    }
+
     private String city;
     private String state;
     private String country;

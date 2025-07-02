@@ -14,5 +14,8 @@ public class App {
 
         Person person = applicationContext.getBean("person", Person.class);
         System.out.println(person);
+
+        Laptop laptop = applicationContext.getBean("laptop", Laptop.class);
+        laptop.compile();
     }
 }
