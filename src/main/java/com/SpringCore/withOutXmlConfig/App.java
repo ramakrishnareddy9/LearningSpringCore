@@ -8,5 +8,10 @@ public class App {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfig.class);
         Student student = applicationContext.getBean("student", Student.class);
         student.study();
+
+        Alien alien = applicationContext.getBean(Alien.class);
+        alien.setAge(20);
+        System.out.println(alien.getAge());
+        alien.code();
     }
 }

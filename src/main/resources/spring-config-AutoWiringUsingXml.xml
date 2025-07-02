@@ -27,7 +27,9 @@
 
     <bean id="someAdd1" class="com.SpringCore.AutoWiringUsingXml.Add"
           p:city="Vijayawada" p:state="AP" p:country="India"/>
-
+<!--     if primary is not there we can use ref in below been to get which been is called-->
+<!--    <bean id="employee1" class="com.SpringCore.AutoWiringUsingXml.Emp"-->
+<!--          p:name="Vishnu" autowire="byType" lazy-init="true" p:address-ref="someAdd"/>-->
     <bean id="employee1" class="com.SpringCore.AutoWiringUsingXml.Emp"
           p:name="Vishnu" autowire="byType" lazy-init="true"/>
 
